@@ -1,0 +1,239 @@
+﻿@model PagedList.IPagedList<DoAn.Models.Product>
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="content" class="site-content">
+    <!-- Breadcrumb -->
+    <div id="breadcrumb">
+        <div class="container">
+            <h2 class="title">Fruit</h2>
+
+            <ul class="breadcrumb">
+                <li><a href="#" title="Home">Home</a></li>
+                <li><a href="#" title="Fruit">Fruit</a></li>
+                <li><span>Tomato</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            @Html.Action("DanhMuc", "Products")
+            <div class="d-flex">
+                <input type="text" class="form-control mr-2" name="kw" placeholder="Search">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <!-- Page Content -->
+            <div id="center-column" class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <div class="product-category-page">
+                    <!-- Nav Bar -->
+                    <div class="products-bar">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <div class="gridlist-toggle" role="tablist">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#products-grid" data-toggle="tab"
+                                               aria-expanded="true"><i class="fa fa-th-large"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#products-list" data-toggle="tab" aria-expanded="false">
+                                                <i class="fa fa-bars"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="total-products">There are @(Model.LastItemOnPage-Model.FirstItemOnPage +1) products</div>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6">
+                                <div class="filter-bar d-flex">
+                                    @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+                                    {
+                                        <div class="select">
+
+                                            <select class="form-control w-auto" name="sorted">
+                                                <option value="">Sort</option>
+                                                <option value="1">Price ↑</option>
+                                                <option value="2">Price ↓</option>
+                                                <option value="3">Name A–Z</option>
+                                                <option value="4">Name Z–A</option>
+                                            </select>
+
+
+
+                                        </div>
+
+
+                                    }
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- Products Grid -->
+                        <div class="tab-pane active" id="products-grid">
+                            <div class="products-block">
+                                <div class="row">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="product-item">
+                                                <div class="product-image">
+                                                    <a href="product-detail-left-sidebar.html">
+                                                        <img class="img-responsive" src="/img/product/@item.ImageURL"
+                                                             alt="Product Image">
+                                                    </a>
+                                                </div>
+
+                                                <div class="product-title">
+                                                    <a href="product-detail-left-sidebar.html">
+                                                        @item.ProductName
+                                                    </a>
+                                                </div>
+
+                                                <div class="product-rating">
+                                                    <div class="star on"></div>
+                                                    <div class="star on"></div>
+                                                    <div class="star on "></div>
+                                                    <div class="star on"></div>
+                                                    <div class="star"></div>
+                                                </div>
+
+                                                <div class="product-price">
+                                                    <span class="sale-price">@((item.Price-(decimal)(item.Price*item.Discount)/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
+                                                    <span class="base-price">@item.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN")) </span>
+                                                </div>
+
+                                                <div class="product-buttons">
+                                                    <a class="add-to-cart" href="#">
+                                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                    </a>
+
+                                                    <a class="add-wishlist" href="#">
+                                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    </a>
+
+                                                    <a class="quickview" href="#">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products List -->
+                        <div class="tab-pane" id="products-list">
+                            <div class="products-block layout-5">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="product-item">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                <div class="product-image">
+                                                    <a href="product-detail-left-sidebar.html">
+                                                        <img class="img-responsive" src="/img/product/@item.ImageURL"
+                                                             alt="Product Image">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                                                <div class="product-info">
+                                                    <div class="product-title">
+                                                        <a href="product-detail-left-sidebar.html">
+                                                            @item.ProductName
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="product-rating">
+                                                        <div class="star on"></div>
+                                                        <div class="star on"></div>
+                                                        <div class="star on "></div>
+                                                        <div class="star on"></div>
+                                                        <div class="star"></div>
+                                                        <span class="review-count">(3 Reviews)</span>
+                                                    </div>
+
+                                                    <div class="product-price">
+                                                        <span class="sale-price">@((item.Price-(decimal)(item.Price*item.Discount)/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
+                                                        <span class="base-price">@item.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN")) </span>
+                                                    </div>
+
+                                                    <div class="product-stock">
+                                                        <i class="fa fa-check-square-o" aria-hidden="true"></i>In
+                                                        stock
+                                                    </div>
+
+                                                    <div class="product-description">
+                                                        @item.Description
+                                                    </div>
+
+                                                    <div class="product-buttons">
+                                                        <a class="add-to-cart" href="#">
+                                                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                            <span>Add To Cart</span>
+                                                        </a>
+
+                                                        <a class="add-wishlist" href="#">
+                                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                                        </a>
+
+                                                        <a class="quickview" href="#">
+                                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination Bar -->
+                    <div class="pagination-bar">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="text">
+                                    Showing @Model.FirstItemOnPage - @Model.LastItemOnPage of @Model.TotalItemCount item(s)
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                                <div class="pagination">
+                                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

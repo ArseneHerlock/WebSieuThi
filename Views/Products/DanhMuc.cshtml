@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DoAn.Models.CategoryGroup>
+
+<div id="left-column" class="sidebar col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <!-- Block - Product Categories -->
+    <div class="block product-categories">
+        <h3 class="block-title">Categories</h3>
+
+        <div class="block-content">
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                    <span class="arrow collapsed" data-toggle="collapse" data-target="#@item.GroupID"
+                          aria-expanded="false" role="button">
+                        <i class="zmdi zmdi-minus"></i>
+                        <i class="zmdi zmdi-plus"></i>
+                    </span>
+
+                    <a class="category-title" data-toggle="collapse" data-target="#@item.GroupID"
+                          aria-expanded="false" role="button">@item.GroupName</a>
+                    <div class="sub-category collapse" id="@item.GroupID" aria-expanded="true" role="main">
+                        @foreach (var sub in item.Categories)
+                        {
+                            <div class="item">
+                                <a href="@Url.Action("Index", "Products", new {id=sub.CategoryID})">@sub.CategoryName</a>
+                            </div>
+                        }
+
+                        
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
