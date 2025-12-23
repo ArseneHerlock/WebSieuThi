@@ -1,0 +1,75 @@
+﻿@model DoAn.Models.EditProductVM
+@{
+    ViewBag.Title = "Edit_SP";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-10 p-4">
+
+    <h3>Sua san pham</h3>
+
+    <div class="card">
+        <div class="card-body">
+            @using (Html.BeginForm("Edit_SP", "Products", FormMethod.Post))
+            {
+                <input type="hidden" value="1">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Tên Sản Phẩm</label>
+                        <input class="form-control" name="ProductName">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Giá</label>
+                        <input type="number" class="form-control" name="Price">
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label class="form-label">Loai</label>
+                        <select class="form-select" name="CategoryID">
+                            @foreach (var item in Model.CategoryGroup)
+                            {
+                                <optgroup label="@item.GroupName">
+                                    @foreach (var sub in item.Categories)
+                                    {
+                                        <option value="@sub.CategoryID">@sub.CategoryName</option>
+                                    }
+
+                                </optgroup>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Số Lượng Tồn</label>
+                        <input type="number" class="form-control" value="120" name="SoLuongTon">
+                    </div>
+
+                    
+                    <div class="col-md-6">
+                        <label class="form-label">Anh hien tai</label><br>
+                        <img src="apple.jpg" width="120" class="mb-2">
+                        <input type="file" class="form-control" name="ImageURL">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Trang thai</label><br>
+                        <input type="radio" checked name="Status" value="1"> Ban
+                        <input type="radio" class="ms-3" name="Status" value="2"> Ngung
+                    </div>
+
+                    <div class="col-md-12">
+                        <button class="btn btn-success">Cập Nhật</button>
+                        <a href="products-index.html" class="btn btn-secondary">Quay lai</a>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+

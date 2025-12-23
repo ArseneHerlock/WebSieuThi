@@ -1,0 +1,77 @@
+﻿@model PagedList.IPagedList<DoAn.Models.Product>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "SanPham_Admin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-10 p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Danh sách sản phẩm</h3>
+        <a href="@Url.Content("~/Products/Create_SP")" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Thêm sản phẩm
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle text-center mb-0">
+                    <thead class="table-success">
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Loại</th>
+                            <th>Giá</th>
+                            <th>Tồn kho</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CategoryID</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.Category.CategoryName</td>
+                                <td>@item.Price ₫</td>
+                                <td>120</td>
+                                <td><span class="badge bg-success">Bán</span></td>
+                                <td>
+                                    <a href="@Url.Action("Edit","Products", new {id=item.ProductID})" class="btn btn-sm btn-warning">
+                                        <i class="bi bi-pencil-square"></i> Sửa
+                                    </a>
+                                    
+                                    @using (Html.BeginForm("DelSanPham_Admin", "Products", new { id = item.ProductID }, FormMethod.Post))
+                                    {
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i> Xóa
+                                        </button>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+
+
+                        <!-- Add more rows dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation" class="my-3">
+                <ul class="pagination justify-content-end">
+                    @foreach (var page in Enumerable.Range(1, Model.PageCount))
+                    {
+                        <li class="page-item @(page == Model.PageNumber ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("SanPham_Admin", new { page })">@page</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+
+        </div>
+    </div>
+</div>

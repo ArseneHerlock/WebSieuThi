@@ -1,4 +1,4 @@
-﻿@model DoAn.Models.Product
+﻿@model IEnumerable<DoAn.Models.CategoryGroup>
 
 @{
     ViewBag.Title = "Create_SP";
@@ -21,10 +21,20 @@
                     </div>
 
                     <select class="form-select" name="CategoryID" required>
+
                         <option value="">Chọn loại</option>
-                        <option value="1">Trai cay</option>
-                        <option value="2">Rau sach</option>
-                        <option value="3">Thit, ca</option>
+                        @foreach (var item in Model)
+                        {
+                            <optgroup label="@item.GroupName">
+                                @foreach (var sub in item.Categories)
+                                {
+                                    <option value="@sub.CategoryID">@sub.CategoryName</option>
+                                }
+
+                            </optgroup>
+                            
+                        }
+
                     </select>
 
 
@@ -90,9 +100,7 @@
 
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index_Admin")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using DoAn.Models;
 using PagedList;
 using PagedList.Mvc;
@@ -20,6 +21,7 @@ namespace DoAn.Controllers
         public ActionResult Index(int? id,int? sorted,int? page,string kw=null)
         {
             var products = db.Products.AsQueryable();
+            products = products.Where(x => x.Status ==true);
             if (id.HasValue)
             {
                 products = products.Where(x => x.CategoryID == id);
@@ -79,8 +81,10 @@ namespace DoAn.Controllers
         }
         public ActionResult Create_SP()
         {
-            return View();
+            var dm = db.CategoryGroups.Include("Categories").ToList();
+            return View(dm);
         }
+        
         [HttpPost]
         public ActionResult Create_SP(Product sp)
         {
@@ -89,6 +93,62 @@ namespace DoAn.Controllers
             db.SaveChanges();
             return RedirectToAction("Index_Admin");
         }
+        public ActionResult SanPham_Admin(int? page)
+        {
+            
+            var sp = db.Products.OrderBy(x=>x.ProductID);
+            var pageSize = 10;
+            var pageNumber = page ?? 1;
+            var productPage = sp.ToPagedList(pageNumber, pageSize);
+            return View(productPage);
+        }
+
+        [HttpPost]
+        public ActionResult DelSanPham_Admin(int? id)
+        {
+            if (id == null)
+                return HttpNotFound(); // hoặc redirect về danh sách sản phẩm
+
+            var sp = db.Products.Find(id);
+            if (sp == null)
+                return HttpNotFound();
+
+            db.Products.Remove(sp);
+            db.SaveChanges();
+
+            return RedirectToAction("SanPham_Admin"); // redirect về trang danh sách sản phẩm
+        }
+        public ActionResult Order_Admin()
+        {
+            var order = db.Orders.Where(x=>x.OrderStatus== "Chờ Xử Lý").ToList();
+            return View(order);
+        }
+
+        [HttpPost]
+        public ActionResult Order_Admin(int? id,int? OrderStatus)
+        {
+            if (id == null) return HttpNotFound();
+            var order = db.Orders.Find(id);
+            if (OrderStatus.HasValue)
+            {
+                switch (OrderStatus)
+                {
+                    case 1:
+                        order.OrderStatus = "Chờ Xử Lý";
+                        break;
+
+                    case 2:
+                        order.OrderStatus = "Đã nhận hàng";
+                        break;
+
+                }
+                
+            }
+            db.Entry(order).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Order_Admin");
+        }
+
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

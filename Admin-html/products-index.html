@@ -1,90 +1,143 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Admin - Quan ly loai</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Admin - Quản lý sản phẩm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-<style>
-body { background-color: #f4fdf9; }
-.sidebar {
-    min-height: 100vh;
-    background: linear-gradient(180deg, #198754, #20c997);
-    color: white;
-}
-.sidebar a { color: white; text-decoration: none; }
-.sidebar a:hover { background-color: rgba(255,255,255,0.15); border-radius: 5px; }
-</style>
+    <style>
+        body {
+            background-color: #f4fdf9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #198754, #20c997);
+            color: white;
+        }
+
+            .sidebar a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+                border-radius: 5px;
+                transition: 0.2s;
+            }
+
+                .sidebar a:hover, .sidebar a.active {
+                    background-color: rgba(255,255,255,0.2);
+                }
+
+            .sidebar h4 {
+                font-weight: bold;
+            }
+
+        .table-hover tbody tr:hover {
+            background-color: #e6f7f1;
+        }
+
+        .badge {
+            font-size: 0.9rem;
+        }
+
+        .btn-sm {
+            min-width: 60px;
+        }
+    </style>
 </head>
 
 <body>
-<div class="container-fluid">
-<div class="row">
+    <div class="container-fluid">
+        <div class="row">
 
-<!-- SIDEBAR -->
-<div class="col-md-2 sidebar p-3">
-    <h4 class="text-center mb-4">
-        <i class="bi bi-shop"></i> FreshMart
-    </h4>
-    <ul class="nav flex-column gap-2">
-        <li><a class="nav-link" href="admin-dashboard.html">Tong quan</a></li>
-        <li><a class="nav-link" href="products.html">San pham</a></li>
-        <li><a class="nav-link" href="orders.html">Don hang</a></li>
-        <li><a class="nav-link active bg-success rounded" href="#">Loai san pham</a></li>
-    </ul>
-</div>
+            <!-- SIDEBAR -->
+            <div class="col-md-2 sidebar p-3">
+                <h4 class="text-center mb-4">
+                    <i class="bi bi-shop"></i> FreshMart
+                </h4>
+                <ul class="nav flex-column gap-2">
+                    <li><a class="nav-link" href="admin-dashboard.html"><i class="bi bi-speedometer2"></i> Tổng quan</a></li>
+                    <li><a class="nav-link" href="products.html"><i class="bi bi-box-seam"></i> Sản phẩm</a></li>
+                    <li><a class="nav-link" href="orders.html"><i class="bi bi-card-checklist"></i> Đơn hàng</a></li>
+                    <li><a class="nav-link active" href="#"><i class="bi bi-tags"></i> Loại sản phẩm</a></li>
+                </ul>
+            </div>
 
-<!-- MAIN -->
-<!-- GIU NGUYEN <head> + SIDEBAR NHU FILE ADMIN -->
-<div class="col-md-10 p-4">
+            <!-- MAIN -->
+            <div class="col-md-10 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3>Danh sách sản phẩm</h3>
+                    <a href="products-create.html" class="btn btn-success">
+                        <i class="bi bi-plus-circle"></i> Thêm sản phẩm
+                    </a>
+                </div>
 
-<div class="d-flex justify-content-between mb-3">
-    <h3>Danh sach san pham</h3>
-    <a href="products-create.html" class="btn btn-success">
-        <i class="bi bi-plus-circle"></i> Them san pham
-    </a>
-</div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover align-middle text-center mb-0">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Loại</th>
+                                        <th>Giá</th>
+                                        <th>Tồn kho</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Táo Mỹ</td>
+                                        <td>Trái cây</td>
+                                        <td>45,000₫</td>
+                                        <td>120</td>
+                                        <td><span class="badge bg-success">Bán</span></td>
+                                        <td>
+                                            <a href="products-edit.html?id=1" class="btn btn-sm btn-warning">
+                                                <i class="bi bi-pencil-square"></i> Sửa
+                                            </a>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Cà rốt</td>
+                                        <td>Rau củ</td>
+                                        <td>25,000₫</td>
+                                        <td>80</td>
+                                        <td><span class="badge bg-secondary">Hết hàng</span></td>
+                                        <td>
+                                            <a href="products-edit.html?id=2" class="btn btn-sm btn-warning">
+                                                <i class="bi bi-pencil-square"></i> Sửa
+                                            </a>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- Add more rows dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="card">
-<div class="card-body">
-<table class="table table-bordered table-hover align-middle">
-<thead class="table-success">
-<tr>
-    <th>ID</th>
-    <th>Ten san pham</th>
-    <th>Loai</th>
-    <th>Gia</th>
-    <th>Ton kho</th>
-    <th>Trang thai</th>
-    <th>Thao tac</th>
-</tr>
-</thead>
-<tbody>
+        </div>
+    </div>
 
-<tr>
-    <td>1</td>
-    <td>Tao My</td>
-    <td>Trai cay</td>
-    <td>45000</td>
-    <td>120</td>
-    <td><span class="badge bg-success">Ban</span></td>
-    <td>
-        <a href="products-edit.html?id=1" class="btn btn-sm btn-warning">Sua</a>
-        <button class="btn btn-sm btn-danger">Xoa</button>
-    </td>
-</tr>
-
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
