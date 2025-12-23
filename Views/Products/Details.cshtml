@@ -2,97 +2,287 @@
 
 @{
     ViewBag.Title = "Details";
+    var splq = ViewBag.SPLQ as List<DoAn.Models.Product>;
+
 }
 
-<h2>Details</h2>
+<div id="content" class="site-content">
+    <!-- Breadcrumb -->
+    <div id="breadcrumb">
+        <div class="container">
+            <h2 class="title">@Model.ProductName</h2>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+            <ul class="breadcrumb">
+                <li><a href="#" title="Home">Home</a></li>
+                <li><a href="#" title="Fruit">Fruit</a></li>
+                <li><span>Tomato</span></li>
+            </ul>
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            @Html.Action("DanhMuc", "Products")
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+            <!-- Page Content -->
+            <div id="center-column" class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <div class="product-detail">
+                    <div class="products-block layout-5">
+                        <div class="product-item">
+                            <div class="product-title">
+                                @Model.ProductName
+                            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
+                            <div class="row">
+                                <div class="product-left col-md-5 col-sm-5 col-xs-12">
+                                    <div class="product-image horizontal">
+                                        <div class="main-image">
+                                            <img class="img-responsive" src="/img/product/@Model.ImageURL" alt="Product Image">
+                                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
+                                    </div>
+                                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                                <div class="product-right col-md-7 col-sm-7 col-xs-12">
+                                    <div class="product-info">
+                                        <div class="product-price">
+                                            <span class="sale-price">@((Model.Price-(decimal)(Model.Price*Model.Discount)/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
+                                            <span class="base-price">@Model.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN")) </span>
+                                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                                        <div class="product-stock">
+                                            <span class="availability">Availability :</span><i class="fa fa-check-square-o" aria-hidden="true"></i>In stock
+                                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ImageURL)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+                                        <div class="product-variants border-bottom">
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AvgRating)
-        </dt>
+                                            <div class="product-add-to-cart border-bottom">
+                                                <div class="product-quantity">
+                                                    <span class="control-label">QTY :</span>
+                                                    <div class="qty">
+                                                        <div class="input-group">
+                                                            <input type="text" name="qty" value="1" data-min="1">
+                                                            <span class="adjust-qty">
+                                                                <span class="adjust-btn plus">+</span>
+                                                                <span class="adjust-btn minus">-</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.AvgRating)
-        </dd>
+                                                <div class="product-buttons">
+                                                    <a class="add-to-cart" href="#">
+                                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                        <span>Add To Cart</span>
+                                                    </a>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RatingCount)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RatingCount)
-        </dd>
+                                                </div>
+                                            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
+                                            <div class="product-share border-bottom">
+                                                <div class="item">
+                                                    <a href="#"><i class="zmdi zmdi-share" aria-hidden="true"></i><span class="text">Share</span></a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="#"><i class="zmdi zmdi-email" aria-hidden="true"></i><span class="text">Send to a friend</span></a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="#"><i class="zmdi zmdi-print" aria-hidden="true"></i><span class="text">Print</span></a>
+                                                </div>
+                                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
+                                            <div class="product-review border-bottom">
+                                                <div class="item">
+                                                    <div class="product-quantity">
+                                                        <span class="control-label">Review :</span>
+                                                        <div class="product-rating">
+                                                            <div class="star on"></div>
+                                                            <div class="star on"></div>
+                                                            <div class="star on"></div>
+                                                            <div class="star on"></div>
+                                                            <div class="star"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-    </dl>
+                                                <div class="item">
+                                                    <a href="#"><i class="zmdi zmdi-comments" aria-hidden="true"></i><span class="text">Read Reviews (3)</span></a>
+                                                </div>
+
+                                                <div class="item">
+                                                    <a href="#"><i class="zmdi zmdi-edit" aria-hidden="true"></i><span class="text">Write a review</span></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="product-extra">
+
+                                                <div class="item">
+                                                    <span class="control-label">Categories :</span>
+                                                    @Model.Category.CategoryName
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-tab">
+                                    <!-- Tab Navigation -->
+                                    <div class="tab-nav">
+                                        <ul>
+                                            <li class="active">
+                                                <a data-toggle="tab" href="#description">
+                                                    <span>Description</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <!-- Tab Content -->
+                                    <div class="tab-content">
+                                        <!-- Description -->
+                                        <div role="tabpanel" class="tab-pane fade in active" id="description">
+                                            <p>@Model.Description</p>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Products -->
+                        <div class="products-block related-products">
+                            <div class="block-title">
+                                <h2 class="title">Related <span>Products</span></h2>
+                            </div>
+
+                            <div class="block-content">
+                                @if (splq != null && splq.Count() > 2)
+                                {
+                                    <div class="products owl-theme owl-carousel">
+
+                                        @foreach (var item in splq)
+                                        {
+                                            <div class="product-item">
+                                                <div class="product-image">
+                                                    <a href="product-detail-left-sidebar.html">
+                                                        <img class="img-responsive" src="/img/product/@item.ImageURL"
+                                                             alt="Product Image">
+                                                    </a>
+                                                </div>
+
+                                                <div class="product-title">
+                                                    <a href="product-detail-left-sidebar.html">
+                                                        @item.ProductName
+                                                    </a>
+                                                </div>
+
+                                                <div class="product-rating">
+                                                    <div class="star on"></div>
+                                                    <div class="star on"></div>
+                                                    <div class="star on "></div>
+                                                    <div class="star on"></div>
+                                                    <div class="star"></div>
+                                                </div>
+
+                                                <div class="product-price">
+                                                    <span class="sale-price">@((item.Price-(decimal)(item.Price*item.Discount)/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
+                                                    <span class="base-price">@item.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN")) </span>
+                                                </div>
+
+                                                <div class="product-buttons">
+                                                    <a class="add-to-cart" href="#">
+                                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                    </a>
+
+                                                    <a class="add-wishlist" href="#">
+                                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                                    </a>
+
+                                                    <a class="quickview" href="#">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                    </div>
+
+                                }
+                                else
+                                {
+                                    <div class="products-block">
+                                        <div class="row">
+                                            @foreach (var item in splq)
+                                            {
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="product-item">
+                                                        <div class="product-image">
+                                                            <a href="@Url.Action("Details", "Products", new {id=item.ProductID})">
+                                                                <img class="img-responsive" src="/img/product/@item.ImageURL"
+                                                                     alt="Product Image">
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-title">
+                                                            <a href="@Url.Action("Details", "Products", new {id=item.ProductID})">
+                                                                @item.ProductName
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="product-rating">
+                                                            <div class="star on"></div>
+                                                            <div class="star on"></div>
+                                                            <div class="star on "></div>
+                                                            <div class="star on"></div>
+                                                            <div class="star"></div>
+                                                        </div>
+
+                                                        <div class="product-price">
+                                                            <span class="sale-price">@((item.Price-(decimal)(item.Price*item.Discount)/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
+                                                            <span class="base-price">@item.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN")) </span>
+                                                        </div>
+
+                                                        <div class="product-buttons">
+                                                            <a class="add-to-cart" href="#">
+                                                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                            </a>
+
+                                                            <a class="add-wishlist" href="#">
+                                                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                                            </a>
+
+                                                            <a class="quickview" href="#">
+                                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+
+
+
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

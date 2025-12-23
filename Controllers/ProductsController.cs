@@ -162,6 +162,7 @@ namespace DoAn.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.SPLQ = db.Products.Where(x => x.ProductID != id&&x.CategoryID==product.CategoryID).ToList();
             return View(product);
         }
 

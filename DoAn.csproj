@@ -449,7 +449,6 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Products\Create_SP.cshtml" />
     <Content Include="Views\Products\Index_Admin.cshtml" />
-    <Content Include="Views\Products\Edit_SP.cshtml" />
     <Content Include="Views\Products\SanPham_Admin.cshtml" />
     <Content Include="Views\Products\Order_Admin.cshtml" />
   </ItemGroup>
