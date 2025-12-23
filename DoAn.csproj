@@ -146,6 +146,12 @@
     <Compile Include="Models\CategoryGroup.cs">
       <DependentUpon>QLSieuThi.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>QLSieuThi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>QLSieuThi.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs">
       <DependentUpon>QLSieuThi.tt</DependentUpon>
     </Compile>
@@ -173,6 +179,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin-html\categories.html" />
+    <Content Include="Admin-html\Index.html" />
+    <Content Include="Admin-html\orders.html" />
+    <Content Include="Admin-html\products-create.html" />
+    <Content Include="Admin-html\products-edit.html" />
+    <Content Include="Admin-html\products-index.html" />
     <Content Include="blog-grid-full-width.html" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -433,6 +445,9 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\DanhMuc.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Products\Create_SP.cshtml" />
+    <Content Include="Views\Products\Index_Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

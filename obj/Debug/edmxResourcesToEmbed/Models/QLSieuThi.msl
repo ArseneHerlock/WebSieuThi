@@ -24,6 +24,8 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="QLSieuThiModel.Product">
         <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="SoLuongBan" ColumnName="SoLuongBan" />
+          <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
@@ -53,6 +55,7 @@
     <EntitySetMapping Name="UserAccounts">
       <EntityTypeMapping TypeName="QLSieuThiModel.UserAccount">
         <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="RoleAccount" ColumnName="RoleAccount" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
@@ -60,6 +63,29 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="QLSieuThiModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="QLSieuThiModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

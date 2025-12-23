@@ -23,6 +23,27 @@
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Status" Type="bit" />
         </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="TotalAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderStatus" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -38,6 +59,8 @@
           <Property Name="CreatedAt" Type="datetime" />
           <Property Name="AvgRating" Type="decimal" Precision="3" Scale="2" />
           <Property Name="RatingCount" Type="int" />
+          <Property Name="SoLuongTon" Type="int" />
+          <Property Name="SoLuongBan" Type="int" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -61,6 +84,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Status" Type="bit" />
           <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="RoleAccount" Type="bit" />
         </EntityType>
         <Association Name="FK_Category_Group">
           <End Role="CategoryGroup" Type="Self.CategoryGroup" Multiplicity="1" />
@@ -71,6 +95,42 @@
             </Principal>
             <Dependent Role="Category">
               <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detail_Order">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detail_Product">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_User">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -113,12 +173,26 @@
         <EntityContainer Name="QLSieuThiModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoryGroup" EntityType="Self.CategoryGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Category_Group" Association="Self.FK_Category_Group">
             <End Role="CategoryGroup" EntitySet="CategoryGroup" />
             <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detail_Order" Association="Self.FK_Detail_Order">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detail_Product" Association="Self.FK_Detail_Product">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_User" Association="Self.FK_Order_User">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
             <End Role="Category" EntitySet="Category" />
@@ -175,6 +249,9 @@
           <Property Name="RatingCount" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Products" ToRole="Category" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_Product" FromRole="Products" ToRole="Review" />
+          <Property Name="SoLuongTon" Type="Int32" />
+          <Property Name="SoLuongBan" Type="Int32" />
+          <NavigationProperty Name="OrderDetails" Relationship="QLSieuThiModel.FK_Detail_Product" FromRole="Product" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -201,6 +278,8 @@
           <Property Name="Status" Type="Boolean" />
           <Property Name="CreatedAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_User" FromRole="UserAccount" ToRole="Review" />
+          <Property Name="RoleAccount" Type="Boolean" />
+          <NavigationProperty Name="Orders" Relationship="QLSieuThiModel.FK_Order_User" FromRole="UserAccount" ToRole="Order" />
         </EntityType>
         <Association Name="FK_Category_Group">
           <End Role="CategoryGroup" Type="Self.CategoryGroup" Multiplicity="1" />
@@ -272,7 +351,82 @@
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="Review" EntitySet="Reviews" />
           </AssociationSet>
+          <EntitySet Name="OrderDetails" EntityType="QLSieuThiModel.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="QLSieuThiModel.Order" />
+          <AssociationSet Name="FK_Detail_Order" Association="QLSieuThiModel.FK_Detail_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detail_Product" Association="QLSieuThiModel.FK_Detail_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_User" Association="QLSieuThiModel.FK_Order_User">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Order" Relationship="QLSieuThiModel.FK_Detail_Order" FromRole="OrderDetail" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="QLSieuThiModel.FK_Detail_Product" FromRole="OrderDetail" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderDetails" Relationship="QLSieuThiModel.FK_Detail_Order" FromRole="Order" ToRole="OrderDetail" />
+          <NavigationProperty Name="UserAccount" Relationship="QLSieuThiModel.FK_Order_User" FromRole="Order" ToRole="UserAccount" />
+          <Property Name="OrderStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Detail_Order">
+          <End Type="QLSieuThiModel.Order" Role="Order" Multiplicity="0..1" />
+          <End Type="QLSieuThiModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detail_Product">
+          <End Type="QLSieuThiModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="QLSieuThiModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_User">
+          <End Type="QLSieuThiModel.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+          <End Type="QLSieuThiModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -302,6 +456,8 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="QLSieuThiModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="SoLuongBan" ColumnName="SoLuongBan" />
+                <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
@@ -331,6 +487,7 @@
           <EntitySetMapping Name="UserAccounts">
             <EntityTypeMapping TypeName="QLSieuThiModel.UserAccount">
               <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="RoleAccount" ColumnName="RoleAccount" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
@@ -338,6 +495,29 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="QLSieuThiModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="QLSieuThiModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Admin - Quan ly loai san pham</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body { background-color: #f4fdf9; }
+.sidebar {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #198754, #20c997);
+    color: white;
+}
+.sidebar a { color: white; text-decoration: none; }
+.sidebar a:hover { background-color: rgba(255,255,255,0.15); border-radius: 5px; }
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+<div class="row">
+
+<!-- SIDEBAR -->
+<div class="col-md-2 sidebar p-3">
+    <h4 class="text-center mb-4">
+        <i class="bi bi-shop"></i> FreshMart
+    </h4>
+    <ul class="nav flex-column gap-2">
+        <li><a class="nav-link" href="admin-dashboard.html">Tong quan</a></li>
+        <li><a class="nav-link" href="products.html">San pham</a></li>
+        <li><a class="nav-link" href="orders.html">Don hang</a></li>
+        <li>
+            <a class="nav-link active bg-success rounded" href="#">
+                <i class="bi bi-tags"></i> Loai san pham
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="col-md-10 p-4">
+
+<h3 class="mb-4">Quan ly loai san pham</h3>
+
+<!-- FORM THEM / SUA -->
+<div class="card mb-4">
+    <div class="card-header bg-success text-white">
+        Them / Cap nhat loai
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Ten loai">
+            </div>
+
+            <div class="col-md-3">
+                <input type="number" class="form-control" placeholder="Group ID">
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option value="1">Hoat dong</option>
+                    <option value="0">Tam an</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-success w-100">
+                    <i class="bi bi-save"></i> Luu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TABLE DANH SACH -->
+<div class="card">
+    <div class="card-header bg-success text-white">
+        Danh sach loai san pham
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th>ID</th>
+                    <th>Ten loai</th>
+                    <th>GroupID</th>
+                    <th>Trang thai</th>
+                    <th width="140">Thao tac</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Trai cay</td>
+                    <td>1</td>
+                    <td>
+                        <span class="badge bg-success">Hoat dong</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-warning">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Rau sach</td>
+                    <td>1</td>
+                    <td>
+                        <span class="badge bg-secondary">Tam an</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-warning">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

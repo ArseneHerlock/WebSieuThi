@@ -18,6 +18,27 @@
     <Property Name="Description" Type="nvarchar" MaxLength="500" />
     <Property Name="Status" Type="bit" />
   </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="TotalAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Products">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -33,6 +54,8 @@
     <Property Name="CreatedAt" Type="datetime" />
     <Property Name="AvgRating" Type="decimal" Precision="3" Scale="2" />
     <Property Name="RatingCount" Type="int" />
+    <Property Name="SoLuongTon" Type="int" />
+    <Property Name="SoLuongBan" Type="int" />
   </EntityType>
   <EntityType Name="Review">
     <Key>
@@ -56,6 +79,7 @@
     <Property Name="Email" Type="nvarchar" MaxLength="100" />
     <Property Name="Status" Type="bit" />
     <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="RoleAccount" Type="bit" />
   </EntityType>
   <Association Name="FK_Category_Group">
     <End Role="CategoryGroup" Type="Self.CategoryGroup" Multiplicity="1" />
@@ -66,6 +90,42 @@
       </Principal>
       <Dependent Role="Category">
         <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detail_Order">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detail_Product">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_User">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -108,12 +168,26 @@
   <EntityContainer Name="QLSieuThiModelStoreContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CategoryGroup" EntityType="Self.CategoryGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Category_Group" Association="Self.FK_Category_Group">
       <End Role="CategoryGroup" EntitySet="CategoryGroup" />
       <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detail_Order" Association="Self.FK_Detail_Order">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detail_Product" Association="Self.FK_Detail_Product">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_User" Association="Self.FK_Order_User">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
       <End Role="Category" EntitySet="Category" />

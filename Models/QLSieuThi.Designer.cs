@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\LTWeb\DoAn\SP\DoAn\Models\QLSieuThi.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\GitHub\LTW\WebSieuThi\Models\QLSieuThi.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

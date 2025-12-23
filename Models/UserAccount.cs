@@ -18,6 +18,7 @@ namespace DoAn.Models
         public UserAccount()
         {
             this.Reviews = new HashSet<Review>();
+            this.Orders = new HashSet<Order>();
         }
     
         public int UserID { get; set; }
@@ -27,8 +28,11 @@ namespace DoAn.Models
         public string Email { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
+        public Nullable<bool> RoleAccount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Review> Reviews { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

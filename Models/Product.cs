@@ -18,6 +18,7 @@ namespace DoAn.Models
         public Product()
         {
             this.Reviews = new HashSet<Review>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
         public int ProductID { get; set; }
@@ -31,9 +32,13 @@ namespace DoAn.Models
         public Nullable<System.DateTime> CreatedAt { get; set; }
         public Nullable<decimal> AvgRating { get; set; }
         public Nullable<int> RatingCount { get; set; }
+        public Nullable<int> SoLuongTon { get; set; }
+        public Nullable<int> SoLuongBan { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Review> Reviews { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\GitHub\\LTW\\WebSieuThi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\models\\qlsieuthi.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:models\\qlsieuthi.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QLSieuThi.edmx [Diagram1]",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Models\\QLSieuThi.edmx",
+              "RelativeDocumentMoniker": "Models\\QLSieuThi.edmx",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Models\\QLSieuThi.edmx [Diagram1]",
+              "RelativeToolTip": "Models\\QLSieuThi.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-12-23T03:41:27.076Z",
+              "EditorCaption": " [Diagram1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

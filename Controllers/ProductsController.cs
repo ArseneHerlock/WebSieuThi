@@ -63,6 +63,32 @@ namespace DoAn.Controllers
             var dm = db.CategoryGroups.Include("Categories").ToList();
             return PartialView(dm);
         }
+        public ActionResult Index_Admin()
+        {
+            ViewBag.TongSP = db.Products.Count();
+            ViewBag.TongTonKho = db.Products.Sum(x => x.SoLuongTon);
+            var daGiao = db.Orders.Where(x => x.OrderStatus == "Đã nhận hàng").ToList();
+            if (daGiao.Count > 0)
+            {
+                ViewBag.DoanhThuThang = daGiao.Sum(x => x.TotalAmount);
+            }
+            var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
+            var order = db.Orders.Include("UserAccount").Where(x=>x.OrderDate>=today&&x.OrderDate<=tomorrow).ToList();
+            return View(order);
+        }
+        public ActionResult Create_SP()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create_SP(Product sp)
+        {
+            sp.CreatedAt = DateTime.Now;
+            db.Products.Add(sp);
+            db.SaveChanges();
+            return RedirectToAction("Index_Admin");
+        }
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)
@@ -99,7 +125,6 @@ namespace DoAn.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
             return View(product);
         }

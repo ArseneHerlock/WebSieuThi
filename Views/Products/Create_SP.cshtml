@@ -1,0 +1,98 @@
+﻿@model DoAn.Models.Product
+
+@{
+    ViewBag.Title = "Create_SP";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-10 p-4">
+    <h3 class="mb-4">Them san pham moi</h3>
+
+    <div class="card">
+        <div class="card-body">
+            @using (Html.BeginForm("Create_SP", "Products", FormMethod.Post))
+            {
+                <div class="row g-3">
+
+                    <!-- Ten san pham -->
+                    <div class="col-md-6">
+                        <label class="form-label">Ten sản phẩm</label>
+                        <input type="text" class="form-control" placeholder="Nhap ten san pham" required name="ProductName">
+                    </div>
+
+                    <select class="form-select" name="CategoryID" required>
+                        <option value="">Chọn loại</option>
+                        <option value="1">Trai cay</option>
+                        <option value="2">Rau sach</option>
+                        <option value="3">Thit, ca</option>
+                    </select>
+
+
+                    <!-- Price -->
+                    <div class="col-md-4">
+                        <label class="form-label">Giá</label>
+                        <input type="number" class="form-control" placeholder="Nhap gia" required name="Price">
+                    </div>
+
+                    <!-- Discount -->
+                    <div class="col-md-4">
+                        <label class="form-label">Giam gia (%)</label>
+                        <input type="number" class="form-control" placeholder="0" value="0" name="Discount">
+                    </div>
+
+                    <!-- So luong ton -->
+                    <div class="col-md-4">
+                        <label class="form-label">Số Lượng Tồn</label>
+                        <input type="number" class="form-control" placeholder="Nhap so luong" value="0" required name="SoLuongTon">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="col-12">
+                        <label class="form-label">Mô tả</label>
+                        <textarea class="form-control" rows="3" placeholder="Mo tả sản phẩm" name="Description"></textarea>
+                    </div>
+
+                    <!-- Image URL -->
+                    <div class="col-md-6">
+                        <label class="form-label">Ảnh Sản Phẩm (URL)</label>
+                        <input type="file" class="form-control" placeholder="URL anh" name="ImageURL">
+                    </div>
+
+                    <!-- Status -->
+                    <div class="col-md-6">
+                        <label class="form-label">Trang thai</label>
+                        <select class="form-select" name="Status">
+                            <option value="1">Hoạt Động</option>
+                            <option value="0">Ngưng</option>
+                        </select>
+                    </div>
+
+
+
+                    <!-- Submit -->
+
+                    <div class="col-12 text-end mt-3">
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save"></i> Luu san pham
+                        </button>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+<h2>Create_SP</h2>
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

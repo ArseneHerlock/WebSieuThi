@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DoAn.Models.Order>
+
+@{
+    ViewBag.Title = "Index_Admin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-10 p-4">
+
+    <!-- TOPBAR -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Tong quan he thong</h3>
+        <div>
+            <span class="me-3">Xin chao, Admin</span>
+            <button class="btn btn-outline-success btn-sm">Dang xuat</button>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card card-stat p-3">
+                <h6>Tổng Sản Phẩm</h6>
+                <h3>@ViewBag.TongSP</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-stat p-3">
+                <h6>Số Đơn Hôm Nay</h6>
+                <h3>@(Model.Where(x=>x.OrderDate?.Date==DateTime.Today).Count())</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-stat p-3">
+                <h6>Tổng Tồn Kho</h6>
+                <h3>@ViewBag.TongTonKho</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-stat p-3">
+                <h6>Doanh Thu Tháng</h6>
+                <h3>@((ViewBag.DoanhThuThang??0).ToString("#,##0",new System.Globalization.CultureInfo("VN-vi")))</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- DON HANG MOI -->
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            Đơn Hàng Hôm Nay
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered align-middle">
+                <thead class="table-success">
+                    <tr>
+                        <th>Mã Đơn</th>
+                        <th>Khách Hàng</th>
+                        <th>Thời Gian Đặt</th>
+                        <th>Tổng Tiền</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.OrderID</td>
+                            <td>@item.UserAccount.FullName</td>
+                            <td>@item.OrderDate</td>
+                            <td>@item.TotalAmount</td>
+                            <td>
+                                @if (@item.OrderStatus == "Chờ Xử Lý")
+                                {
+                                    <span class="badge bg-warning">Chờ Xử Lý</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">Đã Nhận Hàng</span>
+                                }
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
