@@ -132,6 +132,20 @@ namespace DoAn.Controllers
             var products = db.Products.Where(x => giohang.Keys.Contains(x.ProductID));
             return View(products.ToList());
         }
+        public ActionResult DelItemCart(int? id)
+        {
+            var giohang = new Dictionary<int, AddToCart>();
+            giohang = (Dictionary<int, AddToCart>)Session["giohang"];
+            if (giohang != null&&giohang.Keys.Contains(id.Value))
+            {
+                giohang.Remove(id.Value);
+                Session["giohang"] = giohang;
+            }
+            return RedirectToAction("DetailCart");
+            
+            
+
+        }
 
         public ActionResult CheckOut()
         {
@@ -225,8 +239,15 @@ namespace DoAn.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create_SP(Product sp)
+        public ActionResult Create_SP(Product sp,HttpPostedFileBase imgfile)
         {
+            if(imgfile!=null&& imgfile.ContentLength > 0)
+            {
+                string filename = Path.GetFileName(imgfile.FileName);
+                string path = Path.Combine(Server.MapPath("~/img/product"),filename);
+                imgfile.SaveAs(path);
+                sp.ImageURL = filename;
+            }
             sp.CreatedAt = DateTime.Now;
             db.Products.Add(sp);
             db.SaveChanges();

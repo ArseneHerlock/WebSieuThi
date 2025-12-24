@@ -45,7 +45,7 @@
                             tongtien = item.Price * (decimal)giohang[item.ProductID].Quantity;
                             <tr>
                                 <td class="product-remove">
-                                    <a title="Remove this item" class="remove" href="#">
+                                    <a title="Remove this item" class="remove" href="@Url.Action("DelItemCart", "Products", new {id=item.ProductID})">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>
