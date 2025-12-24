@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddToCart.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>QLSieuThi.tt</DependentUpon>
     </Compile>
@@ -457,6 +458,7 @@
     <Content Include="Views\Products\Order_Admin.cshtml" />
     <Content Include="Views\Products\DangNhap.cshtml" />
     <Content Include="Views\Products\DangKy.cshtml" />
+    <Content Include="Views\Products\DetailCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

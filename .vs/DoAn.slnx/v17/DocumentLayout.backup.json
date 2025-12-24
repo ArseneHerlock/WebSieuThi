@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "F:\\GitHub\\LTW\\WebSieuThi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\models\\qlsieuthi.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:models\\qlsieuthi.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\detailcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\detailcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\product-cart.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:product-cart.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\models\\addtocart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:models\\addtocart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T02:00:13.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "product-cart.html",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html",
+              "RelativeDocumentMoniker": "product-cart.html",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html",
+              "RelativeToolTip": "product-cart.html",
+              "ViewState": "AgIAAMIBAAAAAAAAAAAwwN4BAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-24T01:52:30.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QLSieuThi.edmx [Diagram1]",
-              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Models\\QLSieuThi.edmx",
-              "RelativeDocumentMoniker": "Models\\QLSieuThi.edmx",
-              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Models\\QLSieuThi.edmx [Diagram1]",
-              "RelativeToolTip": "Models\\QLSieuThi.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-12-23T03:41:27.076Z",
-              "EditorCaption": " [Diagram1]"
+              "Title": "DetailCart.cshtml",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\DetailCart.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\DetailCart.cshtml",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\DetailCart.cshtml",
+              "RelativeToolTip": "Views\\Products\\DetailCart.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T01:56:25.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAALgAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T01:34:07.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Details.cshtml",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Details.cshtml",
+              "RelativeToolTip": "Views\\Products\\Details.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T01:22:19.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAwHsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T00:45:08.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddToCart.cs",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Models\\AddToCart.cs",
+              "RelativeDocumentMoniker": "Models\\AddToCart.cs",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Models\\AddToCart.cs",
+              "RelativeToolTip": "Models\\AddToCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T00:35:56.73Z",
+              "EditorCaption": ""
             }
           ]
         }

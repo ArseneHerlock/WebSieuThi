@@ -59,33 +59,25 @@
 
 
                                         <div class="product-variants border-bottom">
-
-
-
-
-                                            <div class="product-add-to-cart border-bottom">
-                                                <div class="product-quantity">
-                                                    <span class="control-label">QTY :</span>
-                                                    <div class="qty">
-                                                        <div class="input-group">
-                                                            <input type="text" name="qty" value="1" data-min="1">
-                                                            <span class="adjust-qty">
-                                                                <span class="adjust-btn plus">+</span>
-                                                                <span class="adjust-btn minus">-</span>
-                                                            </span>
-                                                        </div>
+                                            @using (Html.BeginForm("Cart", "Products", FormMethod.Post))
+                                            {
+                                                <input type="hidden" name="ProductID" value="@Model.ProductID" />
+                                                <div class="d-flex align-items-center border-bottom p-3 gap-3">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <label for="qty" class="form-label mb-0">QTY:</label>
+                                                        <input type="number" id="qty" name="Quantity" value="1" min="1" class="form-control" style="width:70px;">
                                                     </div>
-                                                </div>
-
-                                                <div class="product-buttons">
-                                                    <a class="add-to-cart" href="#">
-                                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                                        <span>Add To Cart</span>
-                                                    </a>
-
+                                                    <div>
+                                                        <button typeof="submit" class="btn btn-success d-flex align-items-center gap-1">
+                                                            <i class="fa fa-shopping-basket"></i>
+                                                            Add To Cart
+                                                        </button>
+                                                    </div>
 
                                                 </div>
-                                            </div>
+                                            }
+
+
 
                                             <div class="product-share border-bottom">
                                                 <div class="item">

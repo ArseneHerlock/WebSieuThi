@@ -180,80 +180,20 @@
                             <div class="block-cart dropdown">
                                 <div class="cart-title">
                                     <i class="fa fa-shopping-basket"></i>
-                                    <span class="cart-count">2</span>
+                                    @if (Session["giohang"] != null)
+                                    {
+                                        var giohang = (Dictionary<int, DoAn.Models.AddToCart>)Session["giohang"];
+                                        <span class="badge bg-danger ms-1">@giohang.Count()</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger ms-1">0</span>
+                                    }
+
+
                                 </div>
 
-                                <div class="dropdown-content">
-                                    <div class="cart-content">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="product-image">
-                                                        <a href="product-detail-left-sidebar.html">
-                                                            <img src="/img/product/7.jpg" alt="Product">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-name">
-                                                            <a href="product-detail-left-sidebar.html">
-                                                                Organic
-                                                                Strawberry Fruits
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            2 x <span class="product-price">$28.98</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="action">
-                                                        <a class="remove" href="#">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
 
-                                                <tr>
-                                                    <td class="product-image">
-                                                        <a href="product-detail-left-sidebar.html">
-                                                            <img src="/img/product/6.jpg" alt="Product">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-name">
-                                                            <a href="product-detail-left-sidebar.html">
-                                                                Organic
-                                                                Strawberry
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            1 x <span class="product-price">$35.00</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="action">
-                                                        <a class="remove" href="#">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="total">
-                                                    <td>Total:</td>
-                                                    <td colspan="2">$92.96</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td colspan="3">
-                                                        <div class="cart-button">
-                                                            <a class="btn btn-primary" href="product-cart.html"
-                                                               title="View Cart">View Cart</a>
-                                                            <a class="btn btn-primary" href="product-checkout.html"
-                                                               title="Checkout">Checkout</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -101,6 +101,36 @@ namespace DoAn.Controllers
             ViewBag.ThongBaoDangKy = "Tài Khoản Không Hợp Lệ";
             return View();
         }
+        [HttpPost]
+        public ActionResult Cart(AddToCart model)
+        {
+            var giohang = new Dictionary<int, AddToCart>();
+            if (Session["giohang"] != null)
+            {
+                giohang = (Dictionary<int, AddToCart>)Session["giohang"];
+            }
+            if (model.ProductID.HasValue&&giohang.Keys.Contains(model.ProductID.Value))
+            {
+                giohang[model.ProductID.Value] = model;
+            }
+            else
+            {
+                giohang.Add(model.ProductID.Value, model);
+            }
+
+                Session["giohang"] = giohang;
+            return RedirectToAction("Index");
+        }
+        public ActionResult DetailCart()
+        {
+            var giohang = new Dictionary<int, AddToCart>();
+            if (Session["giohang"] != null)
+            {
+                giohang = (Dictionary<int, AddToCart>)Session["giohang"];
+            }
+            var products = db.Products.Where(x => giohang.Keys.Contains(x.ProductID));
+            return View(products.ToList());
+        }
         public ActionResult Index_Admin()
         {
             ViewBag.TongSP = db.Products.Count();
