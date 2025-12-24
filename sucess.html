@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập</title>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="nav-glass py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="brand h5 mb-0" href="index.html">FlowerVN</a>
+      <div class="catbar">
+      </div>
+      <div class="d-flex gap-2">
+        <a class="btn btn-ghost btn-sm" href="login.html">Đăng nhập</a>
+        <a class="btn btn-brand btn-sm" href="cart.html">Giỏ hàng</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-4">
+    <div class="container">
+      <div class="row g-4">
+        <aside class="col-12 col-lg-3">
+          <div class="cat-tree">
+            <details open>
+              <summary>Hoa theo Dịp</summary>
+              <div class="children">
+                <a href="list.html?cha=occasion&con=birthday">Sinh nhật</a>
+                <a href="list.html?cha=occasion&con=grandopening">Khai trương</a>
+                <a href="list.html?cha=occasion&con=anniversary">Kỷ niệm</a>
+                <a href="list.html?cha=occasion&con=congrats">Chúc mừng</a>
+              </div>
+            </details>
+            <details>
+              <summary>Hoa theo Người nhận</summary>
+              <div class="children">
+                <a href="list.html?cha=recipient&con=for-mom">Tặng Mẹ</a>
+                <a href="list.html?cha=recipient&con=for-friend">Tặng Bạn</a>
+                <a href="list.html?cha=recipient&con=for-partner">Đối tác</a>
+              </div>
+            </details>
+            <details>
+              <summary>Hoa theo Màu sắc</summary>
+              <div class="children">
+                <a href="list.html?cha=color&con=red">Đỏ</a>
+                <a href="list.html?cha=color&con=white">Trắng</a>
+                <a href="list.html?cha=color&con=pastel">Pastel</a>
+              </div>
+            </details>
+          </div>
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h6 class="mb-2">Bộ lọc</h6>
+              <form>
+                <div class="mb-2">
+                  <label class="form-label">Khoảng giá</label>
+                  <select class="form-select" name="khoanggia">
+                    <option value="-">Tất cả</option>
+                    <option value="-300000">&lt; 300k</option>
+                    <option value="300000-600000">300-600k</option>
+                    <option value="600000-">&gt; 600k</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Tìm kiếm</label>
+                  <input class="form-control" placeholder="Tên bó hoa..." name="kw">
+                </div>
+                <hr>
+                <div class="d-grid"><button type="submit" class="btn btn-brand btn-rounded">Tìm kiếm</button></div>
+                <div class="kit-note mt-2">Tìm kiếm với từ khóa và khoảng giá.</div>
+              </form>
+            </div>
+          </div>
+        </aside>
+
+        <!--Start main -->
+
+        <main class="col-12 col-lg-9">
+          <div class="mx-auto" style="max-width:520px">
+            <div class="card shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h5 text-center mb-3">Đặt hành thành công</h3>
+                <form>
+                  <div class="mb-3">
+                    <label class="form-label">Mã đơn hàng</label>
+                    <div class="form-control fw-bold text-end">12345678</div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Tổng tiền</label>
+                    <div class="form-control fw-bold text-end">500.000 VNĐ</div>
+                  </div>
+                  <div class="d-grid"><a href="list.html" class="btn btn-brand btn-rounded">Về trang danh sách</a></div>
+                </form>
+                <div class="small text-muted mt-3">Thông báo thành công; xóa giỏ hàng trong session và chuyển hướng khi
+                  nhấn nút.</div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!--End main -->
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-5">
+    <div class="container py-4">
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <h5 class="mb-2 text-white">FlowerVN</h5>
+          <p class="mb-0">Cửa hàng hoa trực tuyến – Giao diện mẫu phục vụ bài kiểm tra Lập trình Web.</p>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="text-white">Liên kết</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="list.html">Danh sách</a></li>
+            <li><a href="cart.html">Giỏ hàng</a></li>
+            <li><a href="login.html">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="d-flex justify-content-between small">
+        <span>© 2025 FlowerVN</span>
+        <span>Bootstrap 5 + CSS thuần, không JS</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

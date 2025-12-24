@@ -18,10 +18,10 @@ namespace DoAn.Controllers
         private QLSieuThiEntities db = new QLSieuThiEntities();
 
         // GET: Products
-        public ActionResult Index(int? id,int? sorted,int? page,string kw=null)
+        public ActionResult Index(int? id, int? sorted, int? page, string kw = null)
         {
             var products = db.Products.AsQueryable();
-            products = products.Where(x => x.Status ==true);
+            products = products.Where(x => x.Status == true);
             if (id.HasValue)
             {
                 products = products.Where(x => x.CategoryID == id);
@@ -53,7 +53,7 @@ namespace DoAn.Controllers
                 products = products.OrderBy(x => x.ProductID);
             }
             int pageSize = 9;
-            int pageNumber= page ?? 1;
+            int pageNumber = page ?? 1;
             var pagedProducts = products.ToPagedList(pageNumber, pageSize);
 
 
@@ -65,7 +65,7 @@ namespace DoAn.Controllers
             var dm = db.CategoryGroups.Include("Categories").ToList();
             return PartialView(dm);
         }
-        
+
         public ActionResult DangNhap(UserAccount model)
         {
             var user = db.UserAccounts.FirstOrDefault(x => x.Email == model.Email && x.PasswordHash == model.PasswordHash && x.Status == true);
@@ -97,7 +97,7 @@ namespace DoAn.Controllers
                     return RedirectToAction("DangNhap");
                 }
             }
-            
+
             ViewBag.ThongBaoDangKy = "Tài Khoản Không Hợp Lệ";
             return View();
         }
@@ -109,7 +109,7 @@ namespace DoAn.Controllers
             {
                 giohang = (Dictionary<int, AddToCart>)Session["giohang"];
             }
-            if (model.ProductID.HasValue&&giohang.Keys.Contains(model.ProductID.Value))
+            if (model.ProductID.HasValue && giohang.Keys.Contains(model.ProductID.Value))
             {
                 giohang[model.ProductID.Value] = model;
             }
@@ -118,7 +118,7 @@ namespace DoAn.Controllers
                 giohang.Add(model.ProductID.Value, model);
             }
 
-                Session["giohang"] = giohang;
+            Session["giohang"] = giohang;
             return RedirectToAction("Index");
         }
         public ActionResult DetailCart()
@@ -131,6 +131,55 @@ namespace DoAn.Controllers
             var products = db.Products.Where(x => giohang.Keys.Contains(x.ProductID));
             return View(products.ToList());
         }
+
+        public ActionResult CheckOut()
+        {
+            if (Session["user"] == null) return RedirectToAction("DangNhap");
+            if (Session["giohang"] == null) return RedirectToAction("Index");
+            var giohang = new Dictionary<int, AddToCart>();
+            if (Session["giohang"] != null)
+            {
+                giohang = (Dictionary<int, AddToCart>)Session["giohang"];
+            }
+            if (giohang.Count() == 0) return RedirectToAction("Index");
+
+            var products = db.Products.Where(x => giohang.Keys.Contains(x.ProductID));
+            return View(products.ToList());
+        }
+        [HttpPost]
+        public ActionResult CheckOut(Order model)
+        {
+            var user = (UserAccount)Session["user"];
+            model.UserID = user.UserID;
+            model.Status = true;
+            model.OrderDate = DateTime.Now;
+            model.OrderStatus = "Chờ Xử Lý";
+            var giohang = new Dictionary<int, AddToCart>();
+            if (Session["giohang"] != null)
+            {
+                giohang = (Dictionary<int, AddToCart>)Session["giohang"];
+            }
+            var product = db.Products.Where(x => giohang.Keys.Contains(x.ProductID)).ToList();
+            model.TotalAmount = product.Sum(x => x.Price * giohang[x.ProductID].Quantity);
+            model.OrderDetails = new List<OrderDetail>();
+            foreach(var pro in product)
+            {
+                var item = new OrderDetail();
+                item.ProductID = pro.ProductID;
+                item.Quantity = giohang[pro.ProductID].Quantity;
+                item.Price = pro.Price;
+                model.OrderDetails.Add(item);
+            }
+            db.Orders.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Success", new { id = model.OrderID });
+        }
+
+        public ActionResult Success(int? id)
+        {
+            var order = db.Orders.FirstOrDefault(x => x.OrderID == id);
+            return View(order);
+        }
         public ActionResult Index_Admin()
         {
             ViewBag.TongSP = db.Products.Count();
@@ -142,7 +191,7 @@ namespace DoAn.Controllers
             }
             var today = DateTime.Today;
             var tomorrow = today.AddDays(1);
-            var order = db.Orders.Include("UserAccount").Where(x=>x.OrderDate>=today&&x.OrderDate<=tomorrow).ToList();
+            var order = db.Orders.Include("UserAccount").Where(x => x.OrderDate >= today && x.OrderDate <= tomorrow).ToList();
             return View(order);
         }
         public ActionResult Create_SP()
@@ -150,7 +199,7 @@ namespace DoAn.Controllers
             var dm = db.CategoryGroups.Include("Categories").ToList();
             return View(dm);
         }
-        
+
         [HttpPost]
         public ActionResult Create_SP(Product sp)
         {
@@ -161,8 +210,8 @@ namespace DoAn.Controllers
         }
         public ActionResult SanPham_Admin(int? page)
         {
-            
-            var sp = db.Products.OrderBy(x=>x.ProductID);
+
+            var sp = db.Products.OrderBy(x => x.ProductID);
             var pageSize = 10;
             var pageNumber = page ?? 1;
             var productPage = sp.ToPagedList(pageNumber, pageSize);
@@ -186,12 +235,12 @@ namespace DoAn.Controllers
         }
         public ActionResult Order_Admin()
         {
-            var order = db.Orders.Where(x=>x.OrderStatus== "Chờ Xử Lý").ToList();
+            var order = db.Orders.Where(x => x.OrderStatus == "Chờ Xử Lý").ToList();
             return View(order);
         }
 
         [HttpPost]
-        public ActionResult Order_Admin(int? id,int? OrderStatus)
+        public ActionResult Order_Admin(int? id, int? OrderStatus)
         {
             if (id == null) return HttpNotFound();
             var order = db.Orders.Find(id);
@@ -208,7 +257,7 @@ namespace DoAn.Controllers
                         break;
 
                 }
-                
+
             }
             db.Entry(order).State = EntityState.Modified;
             db.SaveChanges();
@@ -228,7 +277,7 @@ namespace DoAn.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.SPLQ = db.Products.Where(x => x.ProductID != id&&x.CategoryID==product.CategoryID).ToList();
+            ViewBag.SPLQ = db.Products.Where(x => x.ProductID != id && x.CategoryID == product.CategoryID).ToList();
             return View(product);
         }
 

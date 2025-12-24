@@ -178,7 +178,7 @@
                         <!-- Cart -->
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="block-cart dropdown">
-                                <div class="cart-title">
+                                <a href="@Url.Action("DetailCart", "Products")" class="cart-title" style="text-decoration: none; color: inherit;">
                                     <i class="fa fa-shopping-basket"></i>
                                     @if (Session["giohang"] != null)
                                     {
@@ -189,13 +189,10 @@
                                     {
                                         <span class="badge bg-danger ms-1">0</span>
                                     }
-
-
-                                </div>
-
-
+                                </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

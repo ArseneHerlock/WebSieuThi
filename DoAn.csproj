@@ -427,6 +427,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="sucess.html" />
     <Content Include="user-login.html" />
     <Content Include="user-register.html" />
     <Content Include="product-cart.html" />
@@ -459,6 +460,8 @@
     <Content Include="Views\Products\DangNhap.cshtml" />
     <Content Include="Views\Products\DangKy.cshtml" />
     <Content Include="Views\Products\DetailCart.cshtml" />
+    <Content Include="Views\Products\CheckOut.cshtml" />
+    <Content Include="Views\Products\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

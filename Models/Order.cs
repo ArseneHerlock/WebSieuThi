@@ -24,8 +24,10 @@ namespace DoAn.Models
         public Nullable<int> UserID { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
-        public string Status { get; set; }
+        public bool Status { get; set; }
         public string OrderStatus { get; set; }
+        public string AddressLine { get; set; }
+        public string Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

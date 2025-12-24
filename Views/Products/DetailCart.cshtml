@@ -8,6 +8,7 @@
     {
         giohang = (Dictionary<int, DoAn.Models.AddToCart>)Session["giohang"];
     }
+    decimal tongtien = 0;
 }
 
 <div id="content" class="site-content">
@@ -41,6 +42,7 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+                            tongtien = item.Price * (decimal)giohang[item.ProductID].Quantity;
                             <tr>
                                 <td class="product-remove">
                                     <a title="Remove this item" class="remove" href="#">
@@ -80,22 +82,22 @@
                         <tr class="cart-total">
                             <td rowspan="3" colspan="3"></td>
                             <td colspan="2" class="text-right">Total products</td>
-                            <td colspan="1" class="text-center">$565</td>
+                            <td colspan="1" class="text-center">@tongtien</td>
                         </tr>
                         <tr class="cart-total">
                             <td colspan="2" class="text-right">Total shipping</td>
-                            <td colspan="1" class="text-center">$10</td>
+                            <td colspan="1" class="text-center">Free ship</td>
                         </tr>
                         <tr class="cart-total">
                             <td colspan="2" class="total text-right">Total</td>
-                            <td colspan="1" class="total text-center">$575</td>
+                            <td colspan="1" class="total text-center">@tongtien</td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
 
             <div class="checkout-btn">
-                <a href="product-checkout.html" class="btn btn-primary pull-right" title="Proceed to checkout">
+                <a href="@Url.Action("CheckOut","Products")" class="btn btn-primary pull-right" title="Proceed to checkout">
                     <span>Proceed to checkout</span>
                     <i class="fa fa-angle-right ml-xs"></i>
                 </a>

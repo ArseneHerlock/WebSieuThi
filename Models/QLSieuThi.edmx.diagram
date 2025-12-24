@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9358f72905fa4ab298f0cfb6084457ef" Name="Diagram1">
+      <Diagram DiagramId="6a87f6bfae40408491c456e4c2a93fcf" Name="Diagram1">
         <EntityTypeShape EntityType="QLSieuThiModel.Category" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.CategoryGroup" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.OrderDetail" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSieuThiModel.Order" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.Order" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.Product" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.Review" Width="1.5" PointX="10.5" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QLSieuThiModel.UserAccount" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />

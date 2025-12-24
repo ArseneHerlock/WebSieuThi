@@ -36,8 +36,10 @@
     <Property Name="UserID" Type="int" />
     <Property Name="OrderDate" Type="datetime" />
     <Property Name="TotalAmount" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
     <Property Name="OrderStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine" Type="nvarchar" MaxLength="255" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
