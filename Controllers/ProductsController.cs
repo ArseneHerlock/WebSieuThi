@@ -65,6 +65,42 @@ namespace DoAn.Controllers
             var dm = db.CategoryGroups.Include("Categories").ToList();
             return PartialView(dm);
         }
+        
+        public ActionResult DangNhap(UserAccount model)
+        {
+            var user = db.UserAccounts.FirstOrDefault(x => x.Email == model.Email && x.PasswordHash == model.PasswordHash && x.Status == true);
+            if (user != null)
+            {
+                if (user.Email == "admin@gmail.com")
+                {
+                    Session["admin"] = user;
+                    return RedirectToAction("Index_Admin");
+                }
+                Session["user"] = user;
+                return RedirectToAction("Index");
+            }
+            ViewBag.ThongBaoDangNhap = "Tài Khoản Không Hợp Lệ";
+            return View();
+        }
+        public ActionResult DangKy(UserAccount model)
+        {
+            if (!string.IsNullOrEmpty(model.Email))
+            {
+                var user = db.UserAccounts.FirstOrDefault(x => x.Email != model.Email);
+                if (user != null)
+                {
+                    model.CreatedAt = DateTime.Now;
+                    model.Status = true;
+                    model.RoleAccount = false;
+                    db.UserAccounts.Add(model);
+                    db.SaveChanges();
+                    return RedirectToAction("DangNhap");
+                }
+            }
+            
+            ViewBag.ThongBaoDangKy = "Tài Khoản Không Hợp Lệ";
+            return View();
+        }
         public ActionResult Index_Admin()
         {
             ViewBag.TongSP = db.Products.Count();

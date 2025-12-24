@@ -404,6 +404,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="libs\font-material\fonts\Material-Design-Iconic-Fontd1f1.woff" />
     <EntityDeploy Include="Models\QLSieuThi.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLSieuThi.Designer.cs</LastGenOutput>
@@ -411,10 +415,6 @@
     <Content Include="Models\QLSieuThi.edmx.diagram">
       <DependentUpon>QLSieuThi.edmx</DependentUpon>
     </Content>
-    <Content Include="libs\font-awesome\fonts\fontawesome-webfont5b62.eot" />
-    <Content Include="libs\font-awesome\fonts\fontawesome-webfont5b62.woff" />
-    <Content Include="libs\font-awesome\fonts\fontawesome-webfontd41d.eot" />
-    <Content Include="libs\font-material\fonts\Material-Design-Iconic-Fontd1f1.woff" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -426,6 +426,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="user-login.html" />
+    <Content Include="user-register.html" />
+    <Content Include="product-cart.html" />
+    <Content Include="product-checkout.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -451,6 +455,8 @@
     <Content Include="Views\Products\Index_Admin.cshtml" />
     <Content Include="Views\Products\SanPham_Admin.cshtml" />
     <Content Include="Views\Products\Order_Admin.cshtml" />
+    <Content Include="Views\Products\DangNhap.cshtml" />
+    <Content Include="Views\Products\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

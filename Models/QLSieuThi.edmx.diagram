@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c2193da1da7a4abdac8a6b28f5633e35" Name="Diagram1">
-        <EntityTypeShape EntityType="QLSieuThiModel.Category" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSieuThiModel.CategoryGroup" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSieuThiModel.Product" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSieuThiModel.Review" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSieuThiModel.UserAccount" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+      <Diagram DiagramId="9358f72905fa4ab298f0cfb6084457ef" Name="Diagram1">
+        <EntityTypeShape EntityType="QLSieuThiModel.Category" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.CategoryGroup" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.OrderDetail" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.Order" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.Product" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.Review" Width="1.5" PointX="10.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSieuThiModel.UserAccount" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <AssociationConnector Association="QLSieuThiModel.FK_Category_Group" ManuallyRouted="false" />
         <AssociationConnector Association="QLSieuThiModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSieuThiModel.FK_Detail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSieuThiModel.FK_Detail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSieuThiModel.FK_Order_User" ManuallyRouted="false" />
         <AssociationConnector Association="QLSieuThiModel.FK_Review_Product" ManuallyRouted="false" />
         <AssociationConnector Association="QLSieuThiModel.FK_Review_User" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QLSieuThiModel.OrderDetail" Width="1.5" PointX="9.75" PointY="3.375" />
-        <EntityTypeShape EntityType="QLSieuThiModel.Order" Width="1.5" PointX="7.5" PointY="5.75" />
-        <AssociationConnector Association="QLSieuThiModel.FK_Detail_Order" />
-        <AssociationConnector Association="QLSieuThiModel.FK_Detail_Product" />
-        <AssociationConnector Association="QLSieuThiModel.FK_Order_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

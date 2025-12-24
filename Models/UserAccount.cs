@@ -17,12 +17,11 @@ namespace DoAn.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserAccount()
         {
-            this.Reviews = new HashSet<Review>();
             this.Orders = new HashSet<Order>();
+            this.Reviews = new HashSet<Review>();
         }
     
         public int UserID { get; set; }
-        public string Username { get; set; }
         public string PasswordHash { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -31,8 +30,8 @@ namespace DoAn.Models
         public Nullable<bool> RoleAccount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Review> Reviews { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

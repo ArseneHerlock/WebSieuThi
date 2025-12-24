@@ -53,9 +53,17 @@
                         <!-- Topbar Left -->
                         <div class="col-md-7 col-sm-7 col-xs-12">
                             <div class="topbar-left d-flex">
-                                <div class="email">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>Email: tivatheme@gmail.com
-                                </div>
+                                @{
+                                    var user = (DoAn.Models.UserAccount)Session["user"];
+                                    if (user != null)
+                                    {
+                                        <div class="email">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>Email: @user.Email
+                                        </div>
+                                    }
+                                }
+
+
                                 <div class="skype">
                                     <i class="fa fa-skype" aria-hidden="true"></i>Skype: tivatheme
                                 </div>
