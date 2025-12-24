@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -164,6 +165,8 @@ namespace DoAn.Controllers
             model.OrderDetails = new List<OrderDetail>();
             foreach(var pro in product)
             {
+                pro.SoLuongBan =(pro.SoLuongBan??0)+ giohang[pro.ProductID].Quantity;
+                pro.SoLuongTon -= giohang[pro.ProductID].Quantity;
                 var item = new OrderDetail();
                 item.ProductID = pro.ProductID;
                 item.Quantity = giohang[pro.ProductID].Quantity;
@@ -243,16 +246,15 @@ namespace DoAn.Controllers
         public ActionResult DelSanPham_Admin(int? id)
         {
             if (id == null)
-                return HttpNotFound(); // hoặc redirect về danh sách sản phẩm
+                return HttpNotFound();
 
             var sp = db.Products.Find(id);
             if (sp == null)
                 return HttpNotFound();
-
-            db.Products.Remove(sp);
+            sp.Status = false;
             db.SaveChanges();
 
-            return RedirectToAction("SanPham_Admin"); // redirect về trang danh sách sản phẩm
+            return RedirectToAction("SanPham_Admin"); 
         }
         public ActionResult Order_Admin()
         {
@@ -284,7 +286,73 @@ namespace DoAn.Controllers
             db.SaveChanges();
             return RedirectToAction("Order_Admin");
         }
+        // --- QUẢN LÝ DANH MỤC (LOẠI) ---
 
+        // 1. Trang danh sách loại
+        public ActionResult DanhMuc_Admin()
+        {
+            var categories = db.Categories.ToList();
+            return View(categories);
+        }
+
+        // 2. Thêm mới loại - POST
+        [HttpPost]
+        public ActionResult Create_Cate(string NameCate)
+        {
+            if (!string.IsNullOrEmpty(NameCate))
+            {
+                try
+                {
+                    Category cat = new Category();
+                    cat.CategoryName = NameCate;
+
+                    // QUAN TRỌNG: Gán GroupID mặc định để không bị lỗi Database
+                    // Bạn hãy kiểm tra trong bảng CategoryGroups xem có mã ID nào (ví dụ: 1) rồi điền vào đây
+                    db.Categories.Add(cat);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    // Nếu vẫn lỗi, dòng này sẽ giúp bạn biết lỗi cụ thể là gì
+                    TempData["Error"] = "Lỗi hệ thống: " + ex.Message;
+                }
+            }
+            return RedirectToAction("DanhMuc_Admin");
+        }
+
+        // 3. Sửa loại - POST
+        [HttpPost]
+        public ActionResult Edit_Cate(int IDCate, string NameCate)
+        {
+            var category = db.Categories.Find(IDCate);
+            if (category != null && !string.IsNullOrEmpty(NameCate))
+            {
+                category.CategoryName = NameCate;
+                db.Entry(category).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return RedirectToAction("DanhMuc_Admin");
+        }
+
+        // 4. Xóa loại
+        [HttpPost]
+        public ActionResult Delete_Cate(int id)
+        {
+            var category = db.Categories.Find(id);
+            if (category != null)
+            {
+                if (db.Products.Any(p => p.CategoryID == id))
+                {
+                    TempData["Error"] = "Không thể xóa loại này vì đang có sản phẩm thuộc danh mục này!";
+                }
+                else
+                {
+                    db.Categories.Remove(category);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("DanhMuc_Admin");
+        }
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)
@@ -347,16 +415,34 @@ namespace DoAn.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,ProductName,CategoryID,Price,Discount,Description,ImageURL,Status,CreatedAt,AvgRating,RatingCount")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductID,ProductName,CategoryID,Price,Discount,Description,ImageURL,Status,CreatedAt,AvgRating,RatingCount,SoLuongTon,SoLuongBan")] Product product,HttpPostedFileBase ImgFile)
         {
+            if(ImgFile!=null&& ImgFile.ContentLength > 0)
+            {
+                string filename = Path.GetFileName(ImgFile.FileName);
+                string path = Path.Combine(Server.MapPath("~/img/product"), filename);
+                ImgFile.SaveAs(path);
+                product.ImageURL = filename;
+
+            }
+            var sp = db.Products.Find(product.ProductID);
+            if (sp == null) return HttpNotFound();
+            sp.ProductName = product.ProductName;
+            sp.CategoryID = product.CategoryID;
+            sp.Price = product.Price;
+            sp.Discount = product.Discount;
+            sp.Description = product.Description;
+            sp.Status = product.Status;
+            sp.SoLuongTon = product.SoLuongTon;
+            sp.SoLuongBan = product.SoLuongBan;
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("SanPham_Admin");
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
-            return View(product);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", sp.CategoryID);
+            return View(sp);
         }
 
         // GET: Products/Delete/5

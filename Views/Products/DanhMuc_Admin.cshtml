@@ -1,0 +1,118 @@
+﻿@model IEnumerable<DoAn.Models.Category>
+    @{
+        ViewBag.Title = "Quản lý loại";
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        // Khởi tạo biến đếm số thứ tự bắt đầu từ 1
+        int stt = 1;
+    }
+
+    <div class="col-md-10 p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3><i class="bi bi-tags-fill text-success"></i> Quản lý Loại Sản Phẩm</h3>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                <i class="bi bi-plus-circle"></i> Thêm loại mới
+            </button>
+        </div>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show">
+                <i class="bi bi-exclamation-triangle-fill"></i> @TempData["Error"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <table class="table table-bordered table-hover align-middle text-center mb-0">
+                    <thead class="table-success text-dark">
+                        <tr>
+                            <th width="10%">STT</th>
+                            <th width="60%">Tên Loại Danh Mục</th>
+                            <th width="30%">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold text-muted">@(stt++)</td>
+                                <td class="text-start ps-4">@item.CategoryName</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-warning me-2"
+                                            onclick="editCate(@item.CategoryID, '@Html.Raw(HttpUtility.JavaScriptStringEncode(item.CategoryName))')">
+                                        <i class="bi bi-pencil"></i> Sửa
+                                    </button>
+
+                                    <form action="@Url.Action("Delete_Cate", "Products", new { id = item.CategoryID })" method="post" style="display:inline;" onsubmit="return confirm('Xác nhận xóa loại này?')">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-trash"></i> Xóa
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="@Url.Action("Create_Cate", "Products")" method="post">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title">Thêm Loại Sản Phẩm Mới</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Tên loại sản phẩm</label>
+                            <input type="text" name="NameCate" class="form-control" placeholder="Ví dụ: Rau củ quả, Trái cây..." required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-success">Lưu dữ liệu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="@Url.Action("Edit_Cate", "Products")" method="post">
+                    <div class="modal-header bg-warning text-dark">
+                        <h5 class="modal-title">Sửa Tên Loại Sản Phẩm</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <input type="hidden" name="IDCate" id="edit_id" />
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Tên loại hiện tại</label>
+                            <input type="text" name="NameCate" id="edit_name" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" class="btn btn-warning">Cập nhật thay đổi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function editCate(id, name) {
+            // Gán ID thực và Tên vào các ô input trong Modal Sửa
+            document.getElementById('edit_id').value = id;
+            document.getElementById('edit_name').value = name;
+
+            // Kích hoạt hiển thị Modal
+            var myModal = new bootstrap.Modal(document.getElementById('editModal'));
+            myModal.show();
+        }
+    </script>

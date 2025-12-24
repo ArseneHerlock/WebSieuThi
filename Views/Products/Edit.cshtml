@@ -26,7 +26,12 @@
                     <!-- Giá -->
                     <div class="col-md-3">
                         <label class="form-label">Giá</label>
-                        <input type="number" class="form-control" name="Price" value="@Model.Price" required />
+                        <input type="text" class="form-control" name="Price" value="@Model.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN"))" required />
+                    </div>
+                    <!-- Giá -->
+                    <div class="col-md-3">
+                        <label class="form-label">Giảm Giá</label>
+                        <input type="number"class="form-control" name="Discount" value="@Model.Discount" required />
                     </div>
 
                     <!-- Loại -->
@@ -45,20 +50,20 @@
                     <!-- Số lượng tồn -->
                     <div class="col-md-3">
                         <label class="form-label">Số lượng tồn</label>
-                        <input type="number" class="form-control" name="Quantity" value="@Model.SoLuongTon" />
+                        <input type="number" class="form-control" name="SoLuongTon" value="@(Model.SoLuongTon??0)" />
                     </div>
 
                     <!-- Đã bán -->
                     <div class="col-md-3">
                         <label class="form-label">Đã bán</label>
-                        <input type="number" class="form-control" value="@Model.SoLuongBan" readonly />
+                        <input type="number" name="SoLuongBan" class="form-control" value="@(Model.SoLuongBan??0)" readonly />
                     </div>
 
                     <!-- Ảnh hiện tại -->
                     <div class="col-md-6">
                         <label class="form-label">Ảnh hiện tại</label><br>
                         <img src="~/img/product/@Model.ImageURL" width="120" class="mb-2" />
-                        <input type="file" class="form-control" name="ImageFile" />
+                        <input type="file" class="form-control" name="ImgFile" />
                     </div>
 
                     <!-- Trạng thái -->
@@ -71,7 +76,7 @@
                     <!-- Buttons -->
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success">Cập nhật</button>
-                        <a href="@Url.Action("Index","Products")" class="btn btn-secondary">Quay lại</a>
+                        <a href="@Url.Action("SanPham_Admin","Products")" class="btn btn-secondary">Quay lại</a>
                     </div>
 
                 </div>
@@ -83,6 +88,6 @@
 
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "SanPham_Admin")
 </div>
 

@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\views\\products\\lichsu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\lichsu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\lichsu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:lichsu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\views\\products\\sanpham_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\sanpham_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\views\\products\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|e:\\ltweb\\doan\\sp\\websieuthi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\views\\products\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\product-checkout.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:product-checkout.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -50,32 +42,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\Details.cshtml",
-              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Details.cshtml",
-              "RelativeToolTip": "Views\\Products\\Details.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAL8AAACBAAAAAAAAAA==",
+              "Title": "SanPham_Admin.cshtml",
+              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\SanPham_Admin.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\SanPham_Admin.cshtml",
+              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\SanPham_Admin.cshtml",
+              "RelativeToolTip": "Views\\Products\\SanPham_Admin.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T06:22:02.515Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAE0AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T06:17:13.676Z",
+              "WhenOpened": "2025-12-24T14:19:23.125Z",
               "EditorCaption": ""
             },
             {
@@ -88,46 +67,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LichSu.html",
-              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\LichSu.html",
-              "RelativeDocumentMoniker": "LichSu.html",
-              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\LichSu.html",
-              "RelativeToolTip": "LichSu.html",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAowHQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-12-24T06:09:14.676Z",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwBsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T14:09:37.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LichSu.cshtml",
-              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\LichSu.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\LichSu.cshtml",
-              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\LichSu.cshtml",
-              "RelativeToolTip": "Views\\Products\\LichSu.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAClAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Edit.cshtml",
+              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Products\\Edit.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowDoAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T06:05:14.128Z",
+              "WhenOpened": "2025-12-24T14:04:25.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Details.cshtml",
+              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Details.cshtml",
+              "RelativeToolTip": "Views\\Products\\Details.cshtml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAL8AAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T06:22:02.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
               "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO0AAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAAAJsAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-24T03:56:58.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Success.cshtml",
               "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\Success.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Success.cshtml",
@@ -140,44 +132,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "product-checkout.html",
-              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\product-checkout.html",
-              "RelativeDocumentMoniker": "product-checkout.html",
-              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\product-checkout.html",
-              "RelativeToolTip": "product-checkout.html",
-              "ViewState": "AgIAAEQCAAAAAAAAAAAowJgBAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-12-24T02:34:45.106Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CheckOut.cshtml",
-              "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\CheckOut.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\CheckOut.cshtml",
-              "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Views\\Products\\CheckOut.cshtml",
-              "RelativeToolTip": "Views\\Products\\CheckOut.cshtml",
-              "ViewState": "AgIAACwAAAAAAAAAAAAowDsAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T02:33:57.901Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
               "ToolTip": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAvwL8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAowLAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T06:14:45.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Web.config",
               "DocumentMoniker": "E:\\LTWeb\\DoAn\\SP\\WebSieuThi\\Web.config",
               "RelativeDocumentMoniker": "Web.config",
