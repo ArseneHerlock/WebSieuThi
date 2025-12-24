@@ -170,8 +170,17 @@ namespace DoAn.Controllers
                 item.Price = pro.Price;
                 model.OrderDetails.Add(item);
             }
+            
             db.Orders.Add(model);
             db.SaveChanges();
+            var lichsu = new Dictionary<int, Order>();
+
+            if (Session["lichsudat"] != null)
+            {
+                lichsu = (Dictionary<int, Order>)Session["lichsudat"];
+            }
+            lichsu.Add(model.OrderID, model);
+            Session["lichsudat"] = lichsu;
             return RedirectToAction("Success", new { id = model.OrderID });
         }
 
@@ -179,6 +188,18 @@ namespace DoAn.Controllers
         {
             var order = db.Orders.FirstOrDefault(x => x.OrderID == id);
             return View(order);
+        }
+        public ActionResult LichSu()
+        {
+            var lichsu = new Dictionary<int, Order>();
+            
+            if (Session["lichsudat"] != null)
+            {
+                lichsu = (Dictionary<int, Order>)Session["lichsudat"];
+            }
+            
+            var ls = db.Orders.Where(x => lichsu.Keys.Contains(x.OrderID)).ToList();
+            return View(ls);
         }
         public ActionResult Index_Admin()
         {

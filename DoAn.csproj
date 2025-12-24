@@ -388,6 +388,7 @@
     <Content Include="libs\slider-range\js\jquery.dependClass-0.1.js" />
     <Content Include="libs\slider-range\js\jquery.slider.js" />
     <Content Include="libs\slider-range\js\tmpl.js" />
+    <Content Include="LichSu.html" />
     <Content Include="Models\QLSieuThi.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSieuThi.edmx</DependentUpon>
@@ -462,6 +463,7 @@
     <Content Include="Views\Products\DetailCart.cshtml" />
     <Content Include="Views\Products\CheckOut.cshtml" />
     <Content Include="Views\Products\Success.cshtml" />
+    <Content Include="Views\Products\LichSu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

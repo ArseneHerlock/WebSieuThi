@@ -189,7 +189,7 @@
                                                 </div>
 
                                                 <div class="product-price">
-                                                    <span class="sale-price">@((item.Price-(decimal)(item.Price*item.Discount)/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
+                                                    <span class="sale-price">@((item.Price-(decimal)(item.Price*(item.Discount??0))/100).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</span>
                                                     <span class="base-price">@item.Price.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN")) </span>
                                                 </div>
 

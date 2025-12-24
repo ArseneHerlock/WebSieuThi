@@ -53,12 +53,13 @@
                         <!-- Topbar Left -->
                         <div class="col-md-7 col-sm-7 col-xs-12">
                             <div class="topbar-left d-flex">
+                                Email:
                                 @{
                                     var user = (DoAn.Models.UserAccount)Session["user"];
                                     if (user != null)
                                     {
                                         <div class="email">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>Email: @user.Email
+                                            <i class="fa fa-envelope" aria-hidden="true"></i> @user.Email
                                         </div>
                                     }
                                 }
@@ -80,8 +81,8 @@
                                     </div>
                                     <div class="dropdown-menu">
                                         <div class="item">
-                                            <a href="#" title="Log in to your customer account">
-                                                <i class="fa fa-cog"></i>My Account
+                                            <a href="@Url.Action("LichSu","Products")" title="Log in to your customer account">
+                                                <i class="fa fa-cog"></i>Lịch Sử
                                             </a>
                                         </div>
                                         <div class="item">
