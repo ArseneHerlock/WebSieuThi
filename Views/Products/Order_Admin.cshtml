@@ -7,20 +7,20 @@
 
 <div class="col-md-10 p-4">
 
-    <h3>Quan ly don hang</h3>
+    <h3>Quản Lý Đơn Hàng</h3>
 
     <div class="row g-3 mb-4">
         <div class="col-md-4">
             <div class="card border-success p-3">
-                <h6>So don hom nay</h6>
-                <h3>18</h3>
+                <h6>Tổng Số Đơn </h6>
+                <h3>@(Model.Count())</h3>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card border-success p-3">
-                <h6>Doanh thu</h6>
-                <h3>15,200,000</h3>
-            </div>
+                <h6>Doanh Thu Tháng</h6>
+                <h3>@((ViewBag.DoanhThuThang??0).ToString("#,##0",new System.Globalization.CultureInfo("vi-VN"))) VNĐ</h3>
+</div>
         </div>
     </div>
 

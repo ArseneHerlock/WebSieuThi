@@ -72,7 +72,7 @@ namespace DoAn.Controllers
             var user = db.UserAccounts.FirstOrDefault(x => x.Email == model.Email && x.PasswordHash == model.PasswordHash && x.Status == true);
             if (user != null)
             {
-                if (user.Email == "admin@gmail.com")
+                if (user.RoleAccount == false)
                 {
                     Session["admin"] = user;
                     return RedirectToAction("Index_Admin");
@@ -225,7 +225,8 @@ namespace DoAn.Controllers
             var daGiao = db.Orders.Where(x => x.OrderStatus == "Đã nhận hàng").ToList();
             if (daGiao.Count > 0)
             {
-                ViewBag.DoanhThuThang = daGiao.Sum(x => x.TotalAmount);
+                
+                ViewBag.DoanhThuNgay= daGiao.Where(x => x.OrderDate.Value.Day == DateTime.Today.Day && x.OrderDate.Value.Year == DateTime.Today.Year && x.OrderDate.Value.Month == DateTime.Today.Month).Sum(x => x.TotalAmount);
             }
             var today = DateTime.Today;
             var tomorrow = today.AddDays(1);
@@ -279,6 +280,8 @@ namespace DoAn.Controllers
         }
         public ActionResult Order_Admin()
         {
+            var daGiao = db.Orders.Where(x => x.OrderStatus == "Đã nhận hàng").ToList();
+            ViewBag.DoanhThuThang = daGiao.Where(x => x.OrderDate.Value.Month == DateTime.Today.Month && x.OrderDate.Value.Year == DateTime.Today.Year).Sum(x => x.TotalAmount);
             var order = db.Orders.Where(x => x.OrderStatus == "Chờ Xử Lý").ToList();
             return View(order);
         }

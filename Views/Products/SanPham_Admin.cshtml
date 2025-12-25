@@ -34,10 +34,10 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.CategoryID</td>
+                                <td>@item.ProductID</td>
                                 <td>@item.ProductName</td>
                                 <td>@item.Category.CategoryName</td>
-                                <td>@item.Price ₫</td>
+                                <td>@item.Price.ToString("#,##0",new System.Globalization.CultureInfo("vi-VN")) VNĐ</td>
                                 <td>@item.SoLuongTon</td>
                                 <td>@item.SoLuongBan</td>
 

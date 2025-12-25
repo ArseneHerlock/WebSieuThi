@@ -38,8 +38,11 @@
         </div>
         <div class="col-md-3">
             <div class="card card-stat p-3">
-                <h6>Doanh Thu Tháng</h6>
-                <h3>@((ViewBag.DoanhThuThang??0).ToString("#,##0",new System.Globalization.CultureInfo("VN-vi")))</h3>
+                <h6>Doanh Thu Ngày</h6>
+                
+                <h3>
+                    @((ViewBag.DoanhThuNgay ?? 0).ToString("#,##0", new System.Globalization.CultureInfo("vi-VN"))) VNĐ
+                </h3>
             </div>
         </div>
     </div>
@@ -67,7 +70,7 @@
                             <td>@item.OrderID</td>
                             <td>@item.UserAccount.FullName</td>
                             <td>@item.OrderDate</td>
-                            <td>@item.TotalAmount</td>
+                            <td>@((item.TotalAmount??0).ToString("#,##0", new System.Globalization.CultureInfo("vi-VN"))) VNĐ</td>
                             <td>
                                 @if (@item.OrderStatus == "Chờ Xử Lý")
                                 {
