@@ -44,7 +44,7 @@
 
                             <td>@item.OrderID</td>
                             <td>@item.UserAccount.FullName</td>
-                            <td>@item.TotalAmount</td>
+                            <td>@((item.TotalAmount??0).ToString("#,##0", new System.Globalization.CultureInfo("vi-VN"))) VNĐ</td>
                             @using (Html.BeginForm("Order_Admin", "Products", FormMethod.Post))
                             {
                                 

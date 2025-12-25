@@ -42,10 +42,10 @@ namespace DoAn.Controllers
                         products = products.OrderByDescending(x => x.Price);
                         break;
                     case 3:
-                        products = products.OrderByDescending(x => x.ProductName);
+                        products = products.OrderBy(x => x.ProductName);
                         break;
                     case 4:
-                        products = products.OrderBy(x => x.ProductName);
+                        products = products.OrderByDescending(x => x.ProductName);
                         break;
                 }
             }

@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "F:\\GitHub\\LTW\\WebSieuThi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\index_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\index_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\order_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\views\\products\\order_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\order_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\detailcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\detailcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:product-cart.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|f:\\github\\ltw\\websieuthi\\views\\products\\index_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\index_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\views\\products\\detailcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:views\\products\\detailcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|solutionrelative:product-cart.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A54F7DFA-BA74-40D9-8658-0D23BB66EBAC}|DoAn.csproj|F:\\GitHub\\LTW\\WebSieuThi\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,61 +46,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index_Admin.cshtml",
               "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Index_Admin.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Index_Admin.cshtml",
               "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Index_Admin.cshtml",
               "RelativeToolTip": "Views\\Products\\Index_Admin.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-25T01:25:48.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Order_Admin.cshtml",
-              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Order_Admin.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\Order_Admin.cshtml",
-              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Order_Admin.cshtml",
-              "RelativeToolTip": "Views\\Products\\Order_Admin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-25T01:25:42.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
               "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAwwOMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T02:00:13.102Z"
+              "WhenOpened": "2025-12-24T02:00:13.102Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "product-cart.html",
-              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html",
-              "RelativeDocumentMoniker": "product-cart.html",
-              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html",
-              "RelativeToolTip": "product-cart.html",
-              "ViewState": "AgIAAMIBAAAAAAAAAAAwwN4BAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-12-24T01:52:30.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "DetailCart.cshtml",
               "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\DetailCart.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\DetailCart.cshtml",
@@ -108,8 +84,7 @@
               "RelativeToolTip": "Views\\Products\\DetailCart.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-24T01:56:25.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T01:56:25.729Z"
             },
             {
               "$type": "Document",
@@ -137,15 +112,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
               "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAAwHsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwC8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T00:45:08.218Z"
+              "WhenOpened": "2025-12-24T00:45:08.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Order_Admin.cshtml",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Order_Admin.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Order_Admin.cshtml",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\Views\\Products\\Order_Admin.cshtml",
+              "RelativeToolTip": "Views\\Products\\Order_Admin.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-25T01:25:42.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "product-cart.html",
+              "DocumentMoniker": "F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html",
+              "RelativeDocumentMoniker": "product-cart.html",
+              "ToolTip": "F:\\GitHub\\LTW\\WebSieuThi\\product-cart.html",
+              "RelativeToolTip": "product-cart.html",
+              "ViewState": "AgIAAMIBAAAAAAAAAAAwwN4BAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-24T01:52:30.154Z"
             },
             {
               "$type": "Document",
